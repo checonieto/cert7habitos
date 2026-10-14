@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ruta de los 7 Hábitos · Big Horn Academy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap">
+<style>
+:root{--n:#0b2a55;--n2:#1d4a94;--w:#fff;--g1:#eef1f6;--g2:#c9d0dc;--g3:#6b7790;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(var(--g2) 1.2px,transparent 1.4px) 0 0/22px 22px var(--g1);color:var(--n);font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+.hd{background:var(--n);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:12px}.hd .lg{width:52px;height:52px;border-radius:14px;background:#fff;object-fit:contain;padding:4px;font-size:1.4rem;display:grid;place-items:center;flex:none}
+.hd h1{font-size:1.02rem;margin:0;font-weight:800;line-height:1.2}.hd small{opacity:.75;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+main{max-width:640px;margin:0 auto;padding:14px 14px 60px}h2{margin:4px 0 6px;font-weight:800;font-size:1.3rem}h3{margin:6px 0 10px}.mu{color:var(--g3);font-size:.85rem}
+.card{background:#fff;border:2.5px solid var(--n);border-radius:20px;box-shadow:5px 5px 0 var(--n);padding:16px;margin-top:16px}
+.dash input{width:100%;border:2px solid var(--n);border-radius:12px;padding:8px 12px;font:inherit;color:var(--n);margin-bottom:10px}
+.xr{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:.88rem}.chip{background:var(--n);color:#fff;border-radius:99px;padding:2px 12px;font-size:.78rem}
+.bar,.bar2{height:12px;background:var(--g1);border:2px solid var(--n);border-radius:99px;overflow:hidden;margin:8px 0}.bar i,.bar2 i{display:block;height:100%;background:var(--n);transition:width .5s}
+.badges{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}.b{aspect-ratio:1;clip-path:polygon(50% 0,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);background:var(--g2);display:grid;place-items:center;font-size:1.05rem;opacity:.5;filter:grayscale(1);transition:.5s}.b.on{background:var(--n);opacity:1;filter:none}
+#map{position:relative;margin-top:8px}#map svg{position:absolute;inset:0;width:100%;height:100%}#map polyline{fill:none;stroke:var(--n);stroke-opacity:.35;stroke-width:5;stroke-dasharray:2 11;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.st{position:absolute;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;border:3px solid var(--n);font-size:2rem;cursor:pointer;display:grid;place-items:center;padding:0;font-family:inherit}
+.st.done{background:#fff;color:var(--n);box-shadow:4px 4px 0 var(--n)}.st.cur{background:var(--n);color:#fff;animation:pl 1.7s infinite}.st.locked{background:var(--g2);border-color:var(--g3);color:var(--g3);cursor:not-allowed}
+.st .ck{position:absolute;right:-4px;top:-4px;width:26px;height:26px;border-radius:50%;background:var(--n);color:#fff;font-size:.8rem;display:grid;place-items:center;border:2px solid #fff}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(11,42,85,.55)}100%{box-shadow:0 0 0 24px rgba(11,42,85,0)}}
+.lb{position:absolute;top:92px;left:50%;transform:translateX(-50%);width:140px;text-align:center;font-size:.7rem;font-weight:600;background:#fff;border:2px solid var(--n);border-radius:99px;padding:2px 8px;color:var(--n);line-height:1.3}.st.locked .lb{border-color:var(--g2);color:var(--g3)}
+#tk{position:absolute;transform:translate(-50%,calc(-100% - 36px));transition:left .9s cubic-bezier(.4,-.5,.6,1.5),top .9s cubic-bezier(.4,-.5,.6,1.5);z-index:3;pointer-events:none;filter:drop-shadow(0 5px 4px rgba(0,0,0,.25))}
+.mc{width:66px;height:66px;object-fit:contain;font-size:2.8rem;display:block;text-align:center;line-height:66px}.mc.s{width:54px;height:54px;line-height:54px;font-size:2.3rem;flex:none}
+.tip{display:flex;gap:10px;align-items:center;background:var(--g1);border:2px solid var(--n);border-radius:18px;padding:8px 14px 8px 8px;margin:10px 0;font-size:.9rem;font-weight:500}
+.big{text-align:center;font-size:3rem}.res{text-align:center}.res .mc{margin:0 auto 6px;width:90px;height:90px;line-height:90px;font-size:4rem}
+.lvl{display:flex;gap:12px;align-items:center;padding:10px;border:2px solid var(--n);border-radius:14px;margin:9px 0;cursor:pointer;background:#fff}.lvl.cur{box-shadow:3px 3px 0 var(--n)}.lvl.done{background:var(--g1)}.lvl.locked{opacity:.5;cursor:not-allowed;border-color:var(--g3)}.lvl.boss{border-style:dashed}
+.n{width:38px;height:38px;border-radius:50%;background:var(--n);color:#fff;display:grid;place-items:center;font-weight:800;flex:none}.lvl.locked .n{background:var(--g2);color:var(--g3)}
+.tx{font-size:1.02rem}.vid{position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;background:#000;margin:10px 0;border:2px solid var(--n)}.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ph{padding:26px;text-align:center;border:2px dashed var(--g3);border-radius:14px;color:var(--g3);margin:10px 0}a{color:var(--n2);font-weight:600}
+.o{display:block;width:100%;text-align:left;padding:12px 14px;margin:9px 0;border:2px solid var(--n);border-radius:14px;background:#fff;color:var(--n);font:inherit;font-weight:500;cursor:pointer}.o:hover:not(:disabled){background:var(--g1)}.o.ok{background:var(--n);color:#fff}.o.ok::after{content:" ✓"}.o.no{background:var(--g2);border-color:var(--g3);color:var(--g3);text-decoration:line-through}
+.btn{background:var(--n);color:#fff;border:2.5px solid var(--n);border-radius:14px;padding:10px 20px;font:inherit;font-weight:700;cursor:pointer;margin:8px 6px 0 0;box-shadow:3px 3px 0 var(--g3)}.btn.g{background:#fff;color:var(--n)}.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--g3)}
+.msg{background:var(--g1);border:2px solid var(--n);padding:10px;border-radius:12px;font-weight:600;margin-top:10px}
+.pop{animation:pp .7s}@keyframes pp{0%{transform:scale(.2) rotate(-30deg)}70%{transform:scale(1.35)}100%{transform:scale(1)}}
+#ts{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,40px);background:var(--n);color:#fff;padding:10px 16px;border-radius:14px;font-weight:600;opacity:0;transition:.3s;z-index:9;max-width:90%;text-align:center}#ts.on{opacity:1;transform:translate(-50%,0)}
+.cert{text-align:center;border:7px double var(--n);border-radius:20px;padding:26px 14px;background:#fff;margin-top:16px}.cert .nm{font-size:1.9rem;font-weight:800;border-bottom:3px solid var(--n);display:inline-block;padding:0 18px;margin:8px 0}.cert .lg{width:80px;height:80px;object-fit:contain;display:block;margin:0 auto 6px;font-size:3rem}
+@media print{.hd,.dash,.noprint{display:none!important}body{background:#fff}}
+</style></head><body>
+<div class="hd"><img class="lg" id="lg" alt="Big Horn Academy" onerror="fb(this,'🏫')"><div><small>Big Horn Academy</small><h1>Ruta de los 7 Hábitos de los Adolescentes Altamente Efectivos</h1></div></div>
+<main>
+<div class="card dash" style="margin-top:0"><input id="nm" placeholder="Nombre del jugador" aria-label="Nombre">
+<div class="xr"><span id="xp"></span><span class="chip" id="rk"></span></div><div class="bar"><i id="pb"></i></div><div class="badges" id="bd"></div></div>
+<div id="view"></div><p class="noprint" style="text-align:center"><button class="btn g" onclick="rs()">↺ Reiniciar progreso</button></p><div id="ts"></div>
+</main>
+<script>
+var H=[
+{n:'Ser Proactivo',e:'🥉',c:'#f59e0b',v:'ieIsIFFgI-8',B:'El Guardián de la Proactividad',L:[
+['El Despertar','Ser proactivo es tomar la iniciativa y hacerte responsable de tu vida. Entre lo que te pasa y cómo respondes hay un espacio: ahí vive tu libertad de elegir. Nadie más es dueño de tu destino.'],
+['El Mapa Interior','Círculo de preocupación: todo lo que te inquieta (el clima, la economía, lo que opinan de ti). Círculo de influencia: lo que sí puedes cambiar (tu actitud, tu esfuerzo y tu comportamiento). Los proactivos invierten su energía en el segundo, y por eso su círculo crece.'],
+['El Poder de Elegir','Reactivo: «No puedo», «Es su culpa», «Así soy yo». Proactivo: «Voy a intentarlo», «Elijo otra manera», «Puedo cambiar». Tu lenguaje revela tu mentalidad. Y aunque no controles lo que pasa, siempre controlas tu actitud ante ello.'],
+['La Vida Real','En la escuela, tu actitud, tu esfuerzo académico y tu comportamiento dependen de ti. Paso de bebé: elige hoy una situación donde sueles reaccionar y practica pausar antes de responder. Una mentalidad empoderada abre la puerta al éxito y a la felicidad.']],
+Q:[['Entre lo que te sucede y tu respuesta existe…',['Un espacio para elegir','Un castigo','Nada, es automático'],0],
+['¿Cuál frase es proactiva?',['No puedo, así soy yo','Es culpa de mi maestro','Voy a buscar otra manera'],2],
+['Tu círculo de influencia incluye…',['El clima y la economía','Tu actitud, esfuerzo y conducta','Las decisiones de otros'],1],
+['Si pones tu energía en el círculo de influencia, este…',['Se encoge','Se mantiene igual','Crece'],2],
+['Un reactivo suele…',['Culpar a otros y dejarse llevar','Asumir la responsabilidad','Fijarse metas'],0],
+['Sacas una mala nota. La respuesta proactiva es…',['Culpar al examen','Ver qué falló y planear cómo mejorar','Rendirte'],1],
+['Capacidad de respuesta significa…',['Controlar a los demás','Elegir tu actitud ante lo que no controlas','Ignorar los problemas'],1]]},
+{n:'Comenzar con un Fin en Mente',e:'🥈',c:'#38bdf8',v:'YxUz45F2a1k',B:'El Arquitecto del Destino',L:[
+['La Brújula Interior','Comenzar con un fin en mente es saber a dónde quieres llegar antes de empezar a caminar. Es tener propósito, dirección y una visión clara de lo que quieres lograr. Sin destino, cualquier camino sirve… y ninguno te lleva a ningún lado.'],
+['El Autor de tu Vida','Todo se crea dos veces: primero en tu mente y después en la realidad. Tú eres el autor de tu historia: define tus valores, identifica tus metas y visualiza cómo quieres verte en el futuro. Una misión personal pone esa visión en palabras.'],
+['El Plan Maestro','Alinea tus acciones diarias con tus grandes objetivos. Planificar y administrar el tiempo es crear planes y establecer prioridades. Cuidado: de nada sirve subir una escalera si está apoyada en la pared equivocada.'],
+['Metas a Corto y Largo Plazo','Corto plazo: metas inmediatas (esta semana, este semestre) que te acercan. Largo plazo: la visión de vida que da dirección. Una visión clara = valores + futuro visualizado + plan.']],
+Q:[['Comenzar con un fin en mente significa…',['Improvisar cada día','Saber a dónde quieres llegar antes de empezar','Copiar a tus amigos'],1],
+['«Todo se crea dos veces» quiere decir que primero se crea…',['En la realidad, luego en la mente','Solo en la realidad','En la mente, luego en la realidad'],2],
+['Una misión personal sirve para…',['Guiar tus decisiones según tus valores','Impresionar a otros','Evitar el esfuerzo'],0],
+['Una meta a corto plazo es…',['Tu visión de vida completa','Un objetivo inmediato que te acerca al largo plazo','Una meta imposible'],1],
+['Una visión clara se forma con…',['Suerte','Valores + futuro visualizado + plan','Solo dinero'],1],
+['La escalera apoyada en la pared equivocada representa…',['Lograr algo que no era lo que querías','Un buen plan','Falta de fuerza'],0],
+['Antes de decidir conviene preguntarte…',['¿Qué es más fácil?','¿Qué hacen los demás?','¿Esto me acerca a mi meta?'],2]]},
+{n:'Poner Primero lo Primero',e:'🥇',c:'#22c55e',v:'-mhIgaqRyy0',B:'El Señor del Tiempo',L:[
+['El Orden del Caos','Poner primero lo primero es hacer lo más importante antes que lo demás. Es establecer prioridades y administrar tu tiempo para equilibrar responsabilidades, metas y ocio. Aquí tu visión se convierte en acción.'],
+['La Matriz del Tiempo','Cuatro cuadrantes: I Importante y urgente · II Importante pero no urgente ⭐ · III Urgente pero no importante · IV Ni urgente ni importante. Los efectivos viven en el II: estudiar con tiempo, construir relaciones, desarrollar habilidades, cuidar su salud.'],
+['El Poder del No','Piensa en las rocas grandes: si llenas el frasco primero con arena, ya no caben. Decir «sí» a lo importante exige decir «no» a las distracciones. Eso requiere disciplina, autocontrol y límites claros.'],
+['La Vida Equilibrada','Procrastinar convierte lo importante en urgente y trae crisis de último minuto. Con un plan semanal tomas decisiones conscientes sobre cómo invertir tu tiempo y energía, con equilibrio entre responsabilidades, metas y descanso.']],
+Q:[['¿Qué cuadrante es el de los efectivos?',['Importante pero no urgente','Urgente pero no importante','Ni urgente ni importante'],0],
+['Estudiar con tiempo antes de un examen está en el cuadrante…',['IV','II','III'],1],
+['Un mensaje que interrumpe pero no es importante es…',['Importante y urgente','Importante no urgente','Urgente pero no importante'],2],
+['Las «rocas grandes» representan…',['Lo importante, que va primero','Las distracciones','El tiempo libre sin plan'],0],
+['Procrastinar tareas importantes provoca…',['Más calma','Crisis de último minuto','Mejores notas'],1],
+['Decir «no» a una distracción es…',['Perder amigos','Cuidar tus prioridades','Ser aburrido'],1],
+['Poner primero lo primero requiere sobre todo…',['Suerte','Disciplina y autocontrol','Más horas en el día'],1]]},
+{n:'Pensar en Ganar-Ganar',e:'💎',c:'#a855f7',v:'J9LrzJDRJrw',B:'El Mediador de la Abundancia',L:[
+['La Mentalidad de Abundancia','Pensar en ganar-ganar es cultivar la colaboración y buscar soluciones donde todos se benefician. Nace de la abundancia: hay suficiente éxito, reconocimiento y oportunidades para todos.'],
+['Ganar-Ganar vs. Ganar-Perder','Ganar-perder: «para que yo gane, tú pierdes» (competir contra todos). Perder-ganar: ceder siempre para caer bien. Ganar-ganar: todos salen beneficiados. El éxito de los demás no es una amenaza para el tuyo.'],
+['La Empatía en Acción','Para llegar a un acuerdo ganar-ganar, practica la empatía, escucha activamente y busca soluciones creativas. Valora las opiniones y perspectivas de los demás, aunque sean distintas a las tuyas.'],
+['Relaciones de Confianza','En la cuenta bancaria de relaciones haces depósitos (cumplir promesas, ser amable, pedir perdón) y retiros (traicionar, ser egoísta, chismear). Así se construyen la confianza y el respeto mutuo; con buen saldo, los conflictos se resuelven de forma constructiva.']],
+Q:[['La mentalidad de abundancia dice que…',['Hay suficiente para todos','Los recursos son escasos','Debes ganarle a todos'],0],
+['«Para que yo gane, tú tienes que perder» es…',['Ganar-ganar','Ganar-perder','Sinergia'],1],
+['Ceder siempre para caerle bien a todos es…',['Ganar-ganar','Un depósito en la cuenta','Perder-ganar'],2],
+['¿Cuál es un depósito en la cuenta bancaria de relaciones?',['Cumplir una promesa','Chismear','Ignorar a alguien'],0],
+['¿Cuál es un retiro de la cuenta?',['Pedir perdón','Traicionar la confianza','Ser amable'],1],
+['Dos amigos quieren la misma cancha. Una solución ganar-ganar es…',['Que gane el más fuerte','Buscar un horario o juego que sirva a ambos','Que nadie la use'],1],
+['El éxito de otra persona es…',['Una amenaza','Una injusticia','Algo que no reduce el tuyo'],2]]},
+{n:'Buscar Primero Entender',e:'🏅',c:'#ef4444',v:'lRbgN3XYJJA',B:'El Guardián de la Empatía',L:[
+['El Arte de Escuchar','Buscar primero entender, y luego ser entendido, es la base de la comunicación efectiva. Antes de dar tu opinión, escucha de verdad. Lo opuesto —hablar primero y fingir que escuchas— destruye relaciones.'],
+['La Escucha Empática','Escucha con los oídos, los ojos y el corazón: no solo las palabras, también el lenguaje corporal y las emociones. Comprende sentimientos, necesidades y perspectivas antes de hablar. Evita interrumpir, aconsejar rápido o preparar tu respuesta mientras el otro habla.'],
+['La Base de la Confianza','Cuando alguien se siente comprendido, baja la guardia y te escucha. La empatía y el respeto construyen relaciones sólidas y un ambiente de confianza y colaboración.'],
+['Expresar con Respeto','Después de entender, te toca ser entendido: expresa tus ideas con claridad y respeto. Usa la comunicación asertiva («yo siento… cuando… necesito…») en lugar de la confrontación.']],
+Q:[['Escuchar con empatía es…',['Esperar tu turno para hablar','Ver el mundo desde la perspectiva del otro','Dar consejos de inmediato'],1],
+['Se escucha con…',['Solo los oídos','Los oídos, los ojos y el corazón','Solo la lógica'],1],
+['¿Qué obstaculiza escuchar de verdad?',['Hacer preguntas','Interrumpir y preparar tu respuesta','Mirar a la persona'],1],
+['El orden del hábito 5 es…',['Primero ser entendido','Hablar y escuchar a la vez','Primero entender, luego ser entendido'],2],
+['Cuando alguien se siente comprendido…',['Se pone a la defensiva','Baja la guardia y te escucha','Deja de hablar'],1],
+['Una frase asertiva suena como…',['«Siempre arruinas todo»','«Yo siento… cuando… y necesito…»','«Haz lo que digo»'],1],
+['Expresar tus ideas con respeto ayuda a…',['Evitar la confrontación','Hacer callar al otro','Ganar la discusión'],0]]},
+{n:'Sinergizar',e:'🎖️',c:'#f97316',v:'yM8Io_PN7bk',B:'El Tejedor de Sinergias',L:[
+['El Poder del Equipo','Sinergizar es trabajar en equipo, colaborar y aprovechar las fortalezas de cada uno para lograr más juntos que por separado. Es el hábito donde los anteriores dan fruto.'],
+['El Todo es Mayor que la Suma','Sinergia: 1 + 1 = 3 o más. Combina habilidades en vez de competir y busca la «tercera alternativa»: una solución mejor que la tuya y que la mía, creada entre ambos.'],
+['La Diversidad como Fortaleza','Valora las diferencias: cada persona ve el mundo distinto, y eso enriquece las soluciones. Crea un ambiente donde todos se sientan incluidos, escuchados y valorados, y busca soluciones ganar-ganar.'],
+['Comunicación y Resolución','La sinergia requiere comunicación efectiva y resolución constructiva de conflictos. Escucha primero, propón ideas creativas y trabaja unido por metas comunes. Lo opuesto —no cooperar— produce resultados mediocres.']],
+Q:[['Sinergia significa que…',['Todos piensan igual','El todo es mayor que la suma de las partes','Uno hace todo el trabajo'],1],
+['La «tercera alternativa» es…',['Tu idea o la mía','Rendirse','Una solución mejor creada entre ambos'],2],
+['Las diferencias entre las personas son…',['Un obstáculo','Una fortaleza que enriquece las ideas','Un motivo para competir'],1],
+['En un equipo con sinergia…',['Todos se sienten escuchados y valorados','Solo habla el líder','Se evitan las ideas nuevas'],0],
+['Para sinergizar bien, primero hay que…',['Imponer tu idea','Escuchar y entender a los demás','Trabajar solo'],1],
+['Un grupo con personalidades distintas…',['Tiene más recursos para resolver problemas','Siempre discute','Rinde menos'],0],
+['Ante un conflicto, la respuesta con sinergia es…',['Ganar a toda costa','Buscar una solución creativa en conjunto','Ignorarlo'],1]]},
+{n:'Afilar la Sierra',e:'🌟',c:'#eab308',v:'',B:'El Guardián del Equilibrio',L:[
+['El Equilibrio Personal','Afilar la sierra es renovarte con regularidad. Un leñador que nunca se detiene a afilar su sierra corta cada vez más lento. Este hábito alimenta a los otros seis: es cuidar lo más valioso que tienes, a ti mismo.'],
+['Las 4 Dimensiones','Cuerpo (físico): ejercicio, alimentación, descanso y salud. Mente (mental): aprender, leer, desarrollar habilidades. Corazón (social-emocional): relaciones y bienestar emocional. Alma (espiritual): conexión con lo trascendental, tus valores y tu propósito.'],
+['Cuidarte para Servir','Si no te cuidas, no puedes ser efectivo en otras áreas ni ayudar a otros. Equilibrar las 4 dimensiones te da más energía, concentración y bienestar. Descuidar una afecta a todas.'],
+['Renovación Diaria','Establece metas y prioridades, maneja tu tiempo y tu energía, y pon límites saludables diciendo «no» cuando haga falta. Haz cada día algo que te nutra y te haga crecer, un pequeño paso a la vez.']],
+Q:[['Afilar la sierra significa…',['Trabajar sin parar','Renovarte con regularidad','Competir más'],1],
+['Las 4 dimensiones son…',['Casa, escuela, amigos y trabajo','Cuerpo, mente, corazón y alma','Dinero, fama, poder y éxito'],1],
+['Dormir bien y hacer ejercicio renuevan la dimensión…',['Física','Mental','Social-emocional'],0],
+['Leer y aprender cosas nuevas renuevan la dimensión…',['Física','Espiritual','Mental'],2],
+['Cuidar tus amistades y emociones renueva la dimensión…',['Social-emocional','Mental','Física'],0],
+['Descuidar tu renovación personal provoca…',['Más energía','Agotamiento y menos efectividad','Mejores relaciones'],1],
+['El hábito 7 es especial porque…',['Reemplaza a los otros','Alimenta a los otros seis hábitos','Solo sirve para deportistas'],1]]}
+];
+
+var LOGO='logo-bha.png',MASC='bicente.png';
+var T=['¡Tú decides cómo responder! Empieza por lo que sí puedes controlar.','Antes de caminar, mira a dónde vas. ¡Dibuja tu destino!','Las rocas grandes primero. ¡Lo importante no puede esperar!','En esta manada hay lugar para todos. ¡Que todos ganen!','Escucha primero con orejas de bisonte… ¡y con el corazón!','Juntos llegamos más lejos: ¡1 + 1 = 3!','Hasta el bisonte más fuerte necesita descansar y renovarse.'];
+var RK=[[0,'Aprendiz'],[501,'Explorador'],[1501,'Guerrero'],[3001,'Estratega'],[4501,'Sabio'],[6001,'Maestro de los 7 Hábitos 👑']];
+var XPL=[0,100,250,450,700],LX=[100,150,200,250],X=[50,22,72,28,72,28,68,50],Y=function(i){return 70+i*130};
+var P=location.search.indexOf('demo')>-1,S={name:'',lv:[0,0,0,0,0,0,0],bd:[0,0,0,0,0,0,0],f1:[1,1,1,1,1,1,1],fin:0,ft:0};
+try{var s0=JSON.parse(localStorage.getItem('h7q')||'null');if(s0)S=s0}catch(e){}
+function sv(){try{localStorage.setItem('h7q',JSON.stringify(S))}catch(e){}}
+function $(i){return document.getElementById(i)}
+function fb(e,t){var s=document.createElement('span');s.className=e.className;s.textContent=t;e.replaceWith(s)}
+function im(src,cls,t){return'<img class="'+cls+'" src="'+src+'" alt="" onerror="fb(this,\''+t+'\')">'}
+function tip(m){return'<div class="tip">'+im(MASC,'mc s','🦬')+'<div><b>Bicente dice:</b> '+m+'</div></div>'}
+function xp(){return S.lv.reduce(function(a,l,h){return a+XPL[l]+S.bd[h]*300},0)}
+function rank(){var x=xp(),r='';RK.forEach(function(k){if(x>=k[0])r=k[1]});return r}
+function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function nb(){return S.bd.reduce(function(a,b){return a+b},0)}
+function unl(h){return h==0||S.bd[h-1]==1}
+function toast(m){var t=$('ts');t.textContent=m;t.className='on';clearTimeout(window._t);window._t=setTimeout(function(){t.className=''},2600)}
+function rs(){S={name:S.name,lv:[0,0,0,0,0,0,0],bd:[0,0,0,0,0,0,0],f1:[1,1,1,1,1,1,1],fin:0,ft:0};sv();map()}
+function head(){var x=xp();$('nm').value=S.name;$('xp').textContent=x.toLocaleString()+' / 7000 XP';$('rk').textContent=rank();$('pb').style.width=(x/70)+'%';
+ $('bd').innerHTML=H.map(function(h,i){return'<div class="b'+(S.bd[i]?' on':'')+'" title="'+h.n+'">'+h.e+'</div>'}).join('')+'<div class="b'+(S.fin?' on':'')+'" title="Certificación">👑</div>'}
+function map(){head();var c=0;while(c<7&&S.bd[c])c++;
+ var pts=X.map(function(x,i){return x+','+Y(i)}).join(' '),HT=Y(7)+105;
+ var n=H.map(function(h,i){var s=S.bd[i]?'done':unl(i)?'cur':'locked';
+  return'<button class="st '+s+'" style="left:'+X[i]+'%;top:'+Y(i)+'px" onclick="go('+i+')">'+(s=='locked'?'🔒':h.e)+(s=='done'?'<span class="ck">✓</span>':'')+'<span class="lb">H'+(i+1)+' · '+h.n+'</span></button>'}).join('');
+ var f=nb()==7?(S.fin?'done':'cur'):'locked';
+ n+='<button class="st '+f+'" style="left:50%;top:'+Y(7)+'px" onclick="go(7)">'+(f=='locked'?'🔒':'👑')+'<span class="lb">Examen Final · Certificación Oficial</span></button>';
+ $('view').innerHTML='<div id="map" style="height:'+HT+'px"><svg viewBox="0 0 100 '+HT+'" preserveAspectRatio="none"><polyline points="'+pts+'"/></svg>'+n+'<div id="tk" style="left:'+X[c]+'%;top:'+Y(c)+'px">'+im(MASC,'mc','🦬')+'</div></div>';scrollTo(0,0)}
+function go(i){var ok=i<7?unl(i):nb()==7;if(!ok){toast('🔒 Derrota al jefe del hábito anterior para desbloquear esta estación');return}
+ var t=$('tk');t.style.left=X[i]+'%';t.style.top=Y(i)+'px';setTimeout(function(){i<7?stn(i):fin()},950)}
+function stn(h){var d=H[h],l=S.lv[h];
+ var it=d.L.map(function(x,k){var s=k<l?'done':k==l?'cur':'locked';return'<div class="lvl '+s+'" '+(k<=l?'onclick="lev('+h+','+k+')"':'')+'><div class="n">'+(k<l?'✓':k<=l?k+1:'🔒')+'</div><div><b>Nivel '+(k+1)+' — '+x[0]+'</b><div class="mu">+'+LX[k]+' XP</div></div></div>'}).join('');
+ var bs=S.bd[h]?'done':l==4?'cur':'locked';
+ it+='<div class="lvl boss '+bs+'" '+(l==4?'onclick="boss('+h+')"':'')+'><div class="n">'+(S.bd[h]?'✓':l==4?'⚔️':'🔒')+'</div><div><b>Jefe — '+d.B+'</b><div class="mu">5 preguntas · 4 aciertos para ganar · +300 XP</div></div></div>';
+ $('view').innerHTML='<button class="btn g" onclick="map()">← Mapa</button><div class="card"><div class="mu">ESTACIÓN '+(h+1)+' DE 7 '+d.e+'</div><h2>'+d.n+'</h2>'+tip(T[h])+it+'</div>';head();scrollTo(0,0)}
+function lev(h,k){var d=H[h],x=d.L[k],done=k<S.lv[h],v=d.v,vid='';
+ if(k==0)vid=v?'<div class="vid"><iframe src="https://www.youtube.com/embed/'+v+'" allowfullscreen title="Video"></iframe></div><p><a href="https://youtu.be/'+v+'" target="_blank" rel="noopener">▶ Ver en YouTube</a></p>':'<div class="ph">🎬 El video de este hábito estará disponible pronto</div>';
+ $('view').innerHTML='<button class="btn g" onclick="stn('+h+')">← Volver</button><div class="card"><div class="mu">Hábito '+(h+1)+' · Nivel '+(k+1)+'</div><h2>'+x[0]+'</h2>'+vid+'<p class="tx">'+x[1]+'</p><button class="btn" onclick="'+(done?'stn('+h+')':'pass('+h+')')+'">'+(done?'Volver':'¡Entendido! +'+LX[k]+' XP')+'</button></div>';scrollTo(0,0)}
+function pass(h){S.lv[h]++;sv();toast('⭐ +'+LX[S.lv[h]-1]+' XP');stn(h)}
+function quiz(items,fb2,end){var i=0,c=0;
+ function show(){var q=items[i],o=sh([0,1,2]);
+  $('view').innerHTML='<div class="card"><div class="mu">Pregunta '+(i+1)+' de '+items.length+'</div><div class="bar2"><i style="width:'+(i/items.length*100)+'%"></i></div><h3>'+q[0]+'</h3>'+o.map(function(j){return'<button class="o" data-j="'+j+'">'+q[1][j]+'</button>'}).join('')+'<div id="fb"></div></div>';scrollTo(0,0);
+  [].forEach.call(document.querySelectorAll('.o'),function(b){b.onclick=function(){var j=+b.dataset.j,ok=j==q[2];if(ok)c++;if(!fb2){nx();return}
+   [].forEach.call(document.querySelectorAll('.o'),function(e){e.disabled=true;if(+e.dataset.j==q[2])e.className='o ok'});if(!ok)b.className='o no';
+   $('fb').innerHTML='<button class="btn" id="nx">'+(i+1<items.length?'Siguiente →':'Ver resultado')+'</button>';$('nx').onclick=nx}})}
+ function nx(){i++;i<items.length?show():end(c)}show()}
+function boss(h){var d=H[h];quiz(sh(d.Q).slice(0,5),true,function(c){var w=c>=4;if(w){S.bd[h]=1}else{S.f1[h]=0}sv();head();
+ $('view').innerHTML='<div class="card res">'+im(MASC,'mc '+(w?'pop':''),'🦬')+'<h2>'+(w?'¡Jefe derrotado!':'Casi lo logras')+'</h2><p>Acertaste '+c+' de 5.</p>'+(w?'<div class="big pop">'+d.e+'</div><p>Ganaste la insignia <b>'+d.n+'</b> y +300 XP. '+(h<6?'¡Se desbloqueó la siguiente estación!':'¡Ya puedes presentar el Examen Final!')+'</p><button class="btn" onclick="map()">Continuar el viaje</button>':'<p>Necesitas 4 aciertos. Repasa los niveles e inténtalo de nuevo, ¡tú puedes!</p><button class="btn" onclick="boss('+h+')">Reintentar</button><button class="btn g" onclick="stn('+h+')">Repasar</button>')+'</div>'})}
+function fin(){if(S.fin)return cert();var w=S.ft-Date.now(),cd=w>0&&!P;
+ $('view').innerHTML='<button class="btn g" onclick="map()">← Mapa</button><div class="card"><div class="big">👑</div><h2 style="text-align:center">Examen Final Integrador</h2>'+tip('¡Llegaste a la última estación, manada!')+'<p>35 preguntas (5 por hábito), sin ayudas y sin retroceso. Necesitas 30 de 35 (85%) para obtener tu Certificación Oficial. Si no lo logras, repasa y vuelve a intentarlo en 24 horas.</p>'+(cd?'<div class="msg">Podrás intentarlo de nuevo en '+Math.ceil(w/36e5)+' h. ¡Repasa los hábitos!</div>':'<button class="btn" onclick="exam()">Comenzar examen</button>')+'</div>'}
+function exam(){var it=[];H.forEach(function(d){it=it.concat(sh(d.Q).slice(0,5))});quiz(sh(it),false,function(c){
+ if(c>=30){S.fin=1;sv();head();cert()}else{S.ft=Date.now()+864e5;sv();$('view').innerHTML='<div class="card res">'+im(MASC,'mc','🦬')+'<h2>Aún no lo logras</h2><p>Acertaste '+c+' de 35 (se requieren 30). Repasa los hábitos y vuelve a intentarlo en 24 horas.</p><button class="btn" onclick="map()">Volver al mapa</button></div>'}})}
+function cert(){var hero=S.f1.every(function(x){return x}),d=new Date().toLocaleDateString('es',{year:'numeric',month:'long',day:'numeric'});
+ $('view').innerHTML='<div class="cert">'+im(LOGO,'lg','🏫')+'<div class="mu">BIG HORN ACADEMY</div><h2>Certificación Oficial</h2><div class="mu">Se otorga a</div><div class="nm">'+esc(S.name||'Estudiante')+'</div><p>por completar la ruta de los<br><b>7 Hábitos de los Adolescentes Altamente Efectivos</b></p><p style="font-size:1.7rem">'+H.map(function(h){return h.e}).join(' ')+'</p><p><b>Adolescente Altamente Efectivo · '+rank()+'</b></p>'+(hero?'<p>🎁 Logro secreto: <b>El Héroe Interior</b></p>':'')+im(MASC,'mc','🦬').replace('class="mc"','class="mc" style="margin:0 auto"')+'<div class="mu">'+d+'</div></div><p class="noprint" style="text-align:center"><button class="btn" onclick="print()">🖨️ Imprimir / guardar PDF</button><button class="btn g" onclick="map()">← Mapa</button></p>'}
+$('lg').src=LOGO;$('nm').addEventListener('input',function(e){S.name=e.target.value;sv()});
+map();
+</script></body></html>
